@@ -1,0 +1,189 @@
+
+/* Fondo general */
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background-image: url("img/fondo-marmol.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Logo */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-size: 4.2em;
+  letter-spacing: 1.3px;
+  font-weight: normal;
+  color: #f8d3e4;
+  text-shadow: 2px 2px 6px rgba(300, 0, 0, 0.8);
+  z-index: 10;
+  font-family: 'Parisienne', cursive;
+  animation: respirar 4s ease-in-out infinite;
+}
+
+@keyframes respirar {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Menú de navegación */
+nav {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #f8d3e4;
+  font-weight: 600;
+  font-family: 'Parisienne', cursive;
+  font-size: 2em;
+  letter-spacing: 1.2px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffffff;
+  text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.8),
+               0 0 10px rgba(255, 192, 203, 0.6);
+  transform: scale(1.08);
+  font-style: italic;
+}
+
+/* Contenedor principal */
+.acerca-main {
+  padding: 120px 20px 60px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Flex de columnas */
+.contenedor-bio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 40px 20px;
+  max-width: 1100px;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Foto */
+.foto-contenedor {
+  width: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.foto-contenedor img {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+  transition: transform 0.5s ease;
+}
+
+.foto-contenedor img:hover {
+  transform: scale(1.03);
+}
+
+/* Texto */
+.texto-bio {
+  max-width: 600px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.texto-bio h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #4e4e4e;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.texto-bio p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #5c5c5c;
+  font-weight: 500;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.9em;
+  backdrop-filter: blur(6px);
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+  .contenedor-bio {
+    flex-direction: column;
+    text-align: center;
+  }
+
+ .foto-contenedor img {
+  width: 150px; 
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+  .texto-bio {
+    width: 100%;
+  }
+}
+
+.texto-bio {
+  position: relative;
+  padding: 30px;
+  border-radius: 20px;
+  background-image: url("img/luna.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Capa de velo blanco para no perder legibilidad */
+.texto-bio::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255, 255, 255, 0.6); /* o más bajo si quieres más visibilidad del gif */
+  z-index: 1;
+  border-radius: 20px;
+}
+
+/* Para que el texto esté encima del fondo y el velo */
+.texto-bio * {
+  position: relative;
+  z-index: 2;
+}

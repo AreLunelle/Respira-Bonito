@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Respira Bonito</title>
+  <link rel="stylesheet" href="style-index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+"></head>
+<body>
+  <audio id="meditacion" autoplay loop>
+    <source src="audio/meditacion.mp3" type="audio/mp3" />
+    Tu navegador no soporta el audio.
+  </audio>
+<main class="main-content">
+  <!-- Carrusel de fondo -->
+  <div class="background-carousel">
+    <img src="img/imagen1.jpg" class="carousel-image active" />
+    <img src="img/imagen2.jpg" class="carousel-image" />
+    <img src="img/imagen3.jpg" class="carousel-image" />
+    <img src="img/imagen4.jpg" class="carousel-image" />
+    <img src="img/imagen5.jpg" class="carousel-image" />
+    <img src="img/imagen6.jpg" class="carousel-image" />
+    <img src="img/imagen7.jpg" class="carousel-image" />
+    <img src="img/imagen8.jpg" class="carousel-image" />
+    <img src="img/imagen9.jpg" class="carousel-image" />
+    <img src="img/imagen10.jpg" class="carousel-image" />
+  </div>
+
+  <!-- Encabezado con menú lateral -->
+  <header>
+    <div class="logo">Respira Bonito</div>
+    <nav>
+  	<ul class="nav-links">
+    	<li><a href="index.html">Inicio</a></li>
+    	<li><a href="acerca.html">Acerca de mí</a></li>
+    	<li><a href="ejercicios.html">Ejercicios</a></li>
+  	</ul>
+     </nav>
+    <div class="hero" id="inicio">
+      <h1>Tu espacio de calma y conexión emocional</h1>
+      <p>Encuentra armonía a través de la respiración consciente, sonidos suaves e imágenes que inspiran paz.</p>
+    </div>
+  </header>
+
+  <!-- Multimedia en tarjetas -->
+<section class="cards">
+  <div class="card card-primera">
+  <h2>¿Quiénes somos?</h2>
+  <div class="texto-respira">
+    <p>
+      Es un pequeño refugio visual y sonoro para invitar a quien nos visite a:
+    </p>
+    <ul>
+      <li>Respirar con conciencia</li>
+      <li>Relajarse en momentos de ansiedad o estrés</li>
+      <li>Meditar de forma sencilla</li>
+      <li>Conectarse con su mundo emocional en silencio</li>
+      <li>Cultivar calma, armonía, introspección y autocuidado</li>
+    </ul>
+    <p>
+      La creación de este sitio es una ventana de paz en medio del caos digital.
+    </p>
+    <p>
+      Respira Bonito es un rincón con amor para reconectar contigo.
+      Aquí no hay prisa, juicio ni ruido. Solo una invitación a pausar, respirar, sentir.
+    </p>
+    <p>
+      A través de imágenes que calman, frases que acompañan y sonidos que reconfortan, este espacio fue diseñado como una herramienta de autocuidado emocional.
+    </p>
+    <p class="frase-final"><strong>¡Úsalo cuando necesites volver a ti!</strong></p>
+  </div>
+</div>
+
+ <div class="card card-central">
+  <img src="img/daisy.gif" class="flor-fondo-grande" alt="Flor decorativa" />
+
+  <blockquote id="fraseMantra" class="frase-mantra">
+    No estás rota. Estás volviendo a ti.
+  </blockquote>
+
+<video autoplay loop muted playsinline style="width: 340px; border-radius: 20px; display: block; margin: 0px auto 0 auto;">
+  <source src="video/mujer-soplando.mp4" type="video/mp4">
+  Tu navegador no soporta la etiqueta de video.
+</video>
+
+  <div class="flor-respirando">
+  <p class="frase-animada">Inhala... Exhala...</p>
+</div>
+
+  <button class="boton-audio" onclick="toggleAudio()">
+    🔊 Escuchar mantra
+  </button>
+
+  <audio id="audioMantra" src="audio/tibetano-relax.mp3" preload="auto"></audio>
+</div>
+
+  <div class="card card-tercera">
+    <h2 class="titulo-viaje">Bienvenido a tu viaje interior...</h2>
+    <video controls>
+      <source src="video/chakras.mp4" type="video/mp4">
+      Tu navegador no soporta video.
+    </video>
+  </div>
+</section>
+  <!-- Footer -->
+  <footer>
+    <p>Creado por Areli Sánchez Alonso | Proyecto: Programación Multimedia</p>
+  </footer>
+</main>
+  <!-- Scripts -->
+  <script>
+    const audio = document.getElementById("meditacion");
+    audio.volume = 0.3;
+
+    const images = document.querySelectorAll(".carousel-image");
+    let current = 0;
+
+    setInterval(() => {
+      images[current].classList.remove("active");
+      current = (current + 1) % images.length;
+      images[current].classList.add("active");
+    }, 6000); // cada 6 segundos
+  </script>
+<script>
+  const frases = [
+    "No estás rota. Estás volviendo a ti.",
+    "Soy calma en medio del caos.",
+    "Hoy, mi alma decide respirar.",
+    "Florezco incluso en mi silencio.",
+    "Regreso a mí, con amor y sin juicio."
+  ];
+
+  let indice = 0;
+
+  function cambiarFrase() {
+    const elemento = document.getElementById("fraseMantra");
+    elemento.classList.add("fade-out");
+
+    setTimeout(() => {
+      indice = (indice + 1) % frases.length;
+      elemento.textContent = `${frases[indice]}`;
+      elemento.classList.remove("fade-out");
+    }, 1000);
+  }
+
+  setInterval(cambiarFrase, 10000);
+
+  // 🪷 Reproduce meditación al primer clic en cualquier parte
+  window.addEventListener('DOMContentLoaded', () => {
+    const meditacion = document.getElementById("meditacion");
+
+    function iniciarMeditacion() {
+      meditacion.play().catch(() => {
+        // Silencio por si falla el autoplay
+      });
+      window.removeEventListener('click', iniciarMeditacion);
+    }
+
+    window.addEventListener('click', iniciarMeditacion);
+  });
+
+  // 🎵 Cambia a mantra si se presiona el botón
+  function toggleAudio() {
+    const mantra = document.getElementById("audioMantra");
+    const meditacion = document.getElementById("meditacion");
+
+    if (mantra.paused) {
+      mantra.play();
+      meditacion.pause();
+    } else {
+      mantra.pause();
+    }
+  }
+</script>
+</body>
+</html>

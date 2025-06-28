@@ -1,0 +1,297 @@
+/* Estructura base */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-image: url("img/fondo_ejercicios.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #333;
+}
+
+/* Contenedor principal que empuja el footer abajo */
+main.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.contenido {
+  flex: 1;
+  padding: 100px 20px 60px;
+  text-align: center;
+}
+
+/* Encabezado */
+nav {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #f8d3e4;
+  font-weight: 600;
+  font-family: 'Parisienne', cursive;
+  font-size: 2em;
+  letter-spacing: 1.2px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffffff;
+  text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.8),
+               0 0 10px rgba(255, 192, 203, 0.6);
+  transform: scale(1.08);
+  font-style: italic;
+}
+
+/* Logo */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-size: 4.2em;
+  letter-spacing: 1.3px;
+  font-weight: normal;
+  color: #f8d3e4;
+  text-shadow: 2px 2px 6px rgba(255, 0, 0, 0.8);
+  z-index: 10;
+  font-family: 'Parisienne', cursive;
+  animation: respirar 4s ease-in-out infinite;
+}
+
+@keyframes respirar {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Títulos */
+.titulo-principal {
+  font-family: 'Playfair Display', serif;
+  font-size: 50px;
+  color: #3e2b4f;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  font-size: 22px;
+  margin-bottom: 50px;
+  color: #5a4c6e;
+}
+
+/* Bloques de ejercicios */
+.bloques-ejercicios {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.card.card-central {
+  background-color: rgba(255, 255, 255, 0.85);  
+  padding: 30px;
+  border-radius: 20px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  text-align: center;
+  backdrop-filter: blur(10px); 
+}
+
+.card.card-central:hover {
+  transform: scale(1.02);
+}
+
+.card.card-central h2,
+.bloque-placeholder h3 {
+ font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  color: #331a2d;
+  margin-bottom: 15px;
+}
+
+.card.card-central p,
+.bloque-placeholder p,
+.bloque-placeholder li {
+  font-size: 20px;
+  font-family: 'Quicksand', sans-serif;
+  color: #222;
+}
+
+.card.card-central button {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 5px 0;
+  padding: 8px 16px;
+  background-color: #e76fa1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card.card-central button:hover {
+  background-color: #c694cc;
+}
+
+/* Bloques laterales */
+.bloque-placeholder {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  border-radius: 20px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.bloque-placeholder:hover {
+  transform: scale(1.02);
+}
+
+.bloque-placeholder h3 {
+  font-family: 'Playfair Display', serif; 
+  font-size: 25px;
+  color: #331a2d;
+  margin-bottom: 15px;
+}
+
+.bloque-placeholder button {
+  margin: 5px 0;
+  padding: 8px 16px;
+  background-color: #dcb6e1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.bloque-placeholder button:hover {
+  background-color: #bb8ecb;
+}
+
+/* Fondo animado de pétalos */
+.tarjeta-flores {
+  position: relative;
+  overflow: hidden;
+}
+
+.tarjeta-flores::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("img/petalos_animados.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.25;
+  z-index: 1;
+}
+
+.tarjeta-flores * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Footer*/
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.9em;
+  backdrop-filter: blur(6px);
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  nav {
+    position: static;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-links li a {
+    font-size: 1.5em;
+  }
+
+  .logo {
+    font-size: 2.5em;
+    text-align: center;
+    position: static;
+    margin-top: 20px;
+  }
+
+  .contenido {
+    padding: 60px 15px 40px;
+  }
+
+  .bloques-ejercicios {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .card.card-central,
+  .bloque-placeholder {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .subtitulo {
+    font-size: 18px;
+  }
+
+ .bloque-placeholder video {
+  max-width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+audio {
+  margin-top: 10px;
+  width: 100%;
+}
+
+  footer {
+    font-size: 0.85rem;
+    padding: 0.8rem 1rem;
+  }
+}

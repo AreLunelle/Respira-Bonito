@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Respira Bonito</title>
+  <link rel="stylesheet" href="style-ejercicios.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700&family=Parisienne&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Encabezado con menú lateral -->
+  <header>
+    <div class="logo">Respira Bonito</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="acerca.html">Acerca de mí</a></li>
+        <li><a href="ejercicios.html">Ejercicios</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main-content">
+    <div class="contenido">
+      <h1 class="titulo-principal">Explora tu calma</h1> 
+      <p class="subtitulo">Un espacio multimedia para conectar contigo</p>
+
+      <div class="bloques-ejercicios">
+        <div class="bloque-placeholder tarjeta-flores">
+          <h3>Tips para reconectar 🌸</h3>
+          <ul style="text-align: left; padding-left: 1rem;">
+              <li>Si te cuesta respirar, empieza por exhalar.</li>
+              <li>Deja que el aire entre como si olieras una flor.</li>
+              <li>Concéntrate en el sonido de tu aliento.</li>
+              <li>Pon tu mano en el pecho y repite: <span style="color:#6d3b5f; font-weight:bold;">“Estoy aquí para mí”.</span></li>
+              <li>Observa tu entorno: nombra <span style="color:#3e2b4f; font-weight:bold;">3 colores</span> que veas.</li>
+              <li>Agradece por algo, aunque sea mínimo: <span style="color:#6d3b5f; font-weight:bold;">tu respiración, tu cuerpo, tu intención.</span></li>
+          </ul>
+        </div>
+
+        <div class="card card-central tarjeta-flores">
+          <h2>Ejercicios guiados 🧘‍♀️</h2>
+          <p>Respira 4-4-4</p>
+          <audio id="audio1" src="audio/respira444.mp3"></audio>
+          <button id="btn1" onclick="playOnly('audio1', 'btn1')">Reproducir</button>
+
+          <p>Respiración cuadrada</p>
+          <audio id="audio2" src="audio/respiracion_cuadrada.mp3"></audio>
+          <button id="btn2" onclick="playOnly('audio2', 'btn2')">Reproducir</button>
+
+          <p>Música para respirar conmigo</p>
+          <audio id="audio3" src="audio/conmigo.mp3"></audio>
+          <button id="btn3" onclick="playOnly('audio3', 'btn3')">Reproducir</button>
+        </div>
+
+       <div class="bloque-placeholder tarjeta-flores">
+        <h3>Instante de paz 🌊</h3>
+      <p><strong>Fluye sin miedo, sin prisa y en calma...</strong></p>
+      <video src="video/cascada_silenciosa.mp4" autoplay loop muted playsinline width="100%" style="border-radius: 10px;"></video>
+      <p><strong>pero nunca dejes de avanzar.</strong></p>
+      <audio controls>
+        <source src="audio/sonido_cascada.mp3" type="audio/mpeg">
+          Tu navegador no soporta el audio.
+      </audio>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer FUERA DEL MAIN -->
+  <footer>
+    <p>Creado por Areli Sánchez Alonso | Proyecto: Programación Multimedia</p>
+  </footer>
+
+  <!-- Script para controlar audios -->
+  <script>
+    function playOnly(audioId, buttonId) {
+      const audios = ['audio1', 'audio2', 'audio3'];
+      const buttons = ['btn1', 'btn2', 'btn3'];
+
+      const selectedAudio = document.getElementById(audioId);
+      const selectedButton = document.getElementById(buttonId);
+
+      if (!selectedAudio.paused) {
+        selectedAudio.pause();
+        selectedAudio.currentTime = 0;
+        selectedButton.textContent = 'Reproducir';
+        return;
+      }
+
+      audios.forEach((id, index) => {
+        const audio = document.getElementById(id);
+        const btn = document.getElementById(buttons[index]);
+        if (id !== audioId) {
+          audio.pause();
+          audio.currentTime = 0;
+          btn.textContent = 'Reproducir';
+        }
+      });
+
+      selectedAudio.play();
+      selectedButton.textContent = 'Detener';
+
+      selectedAudio.onended = () => {
+        selectedButton.textContent = 'Reproducir';
+      };
+    }
+  </script>
+</body>
+</html>
+
