@@ -231,64 +231,86 @@ footer {
   backdrop-filter: blur(6px);
 }
 
-/* Responsive para pantallas pequeñas */
 @media (max-width: 768px) {
   nav {
     position: static;
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: center;
   }
 
   .nav-links {
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     padding: 0;
-    margin: 0;
+    margin-top: 10px;
   }
 
   .nav-links li a {
-    font-size: 1.5em;
+    font-size: 1.4em;
   }
 
   .logo {
     font-size: 2.5em;
     text-align: center;
     position: static;
-    margin-top: 20px;
+    margin: 20px auto 10px;
   }
 
   .contenido {
-    padding: 60px 15px 40px;
+    padding: 70px 15px 40px;
+  }
+
+  .titulo-principal {
+    font-size: 2rem;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+    margin-bottom: 30px;
   }
 
   .bloques-ejercicios {
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 25px;
   }
 
   .card.card-central,
   .bloque-placeholder {
     width: 90%;
-    max-width: 350px;
+    max-width: 360px;
+    padding: 20px;
   }
 
-  .subtitulo {
-    font-size: 18px;
+  .card.card-central h2,
+  .bloque-placeholder h3 {
+    font-size: 1.3rem;
   }
 
- .bloque-placeholder video {
-  max-width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 12px;
-}
+  .card.card-central p,
+  .bloque-placeholder p,
+  .bloque-placeholder li {
+    font-size: 1rem;
+  }
 
-audio {
-  margin-top: 10px;
-  width: 100%;
-}
+  .card.card-central button,
+  .bloque-placeholder button {
+    font-size: 0.95rem;
+    padding: 8px 14px;
+  }
+
+  .bloque-placeholder video {
+    max-width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  audio {
+    margin-top: 10px;
+    width: 100%;
+  }
 
   footer {
     font-size: 0.85rem;
