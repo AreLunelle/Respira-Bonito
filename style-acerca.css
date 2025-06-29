@@ -152,17 +152,17 @@ footer {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* Capa de velo blanco para no perder legibilidad */
+/* Capa para no perder legibilidad */
 .texto-bio::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(255, 255, 255, 0.6); /* o más bajo si quieres más visibilidad del gif */
+  background-color: rgba(255, 255, 255, 0.6); 
   z-index: 1;
   border-radius: 20px;
 }
 
-/* Para que el texto esté encima del fondo y el velo */
+/* Para que el texto esté encima del fondo */
 .texto-bio * {
   position: relative;
   z-index: 2;

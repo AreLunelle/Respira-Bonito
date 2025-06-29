@@ -17,7 +17,7 @@ body {
   color: #333;
 }
 
-/* Contenedor principal que empuja el footer abajo */
+/* Contenedor principal */
 main.main-content {
   flex: 1;
   display: flex;

@@ -22,19 +22,19 @@ nav {
 
 .nav-links li a {
   text-decoration: none;
-  color: #f8d3e4; /* más claro y legible */
+  color: #f8d3e4; 
   font-weight: 600;
   font-family: 'Parisienne', cursive;
   font-size: 2em;
   letter-spacing: 1.2px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* sombra para destacar sobre fondo oscuro */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); 
   transition: all 0.3s ease;
 }
 
 .nav-links li a:hover {
   color: #ffffff;
   text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.8),
-               0 0 10px rgba(255, 192, 203, 0.6); /* un halo rosa suave */
+               0 0 10px rgba(255, 192, 203, 0.6); 
   transform: scale(1.08);
   font-style: italic;
 }
@@ -139,7 +139,7 @@ nav {
   margin-top: 100px;
   text-align: center;
   padding: 25px 30px;
-  background-color: rgba(0, 0, 0, 0); /* Fondo oscuro transparente */
+  background-color: rgba(0, 0, 0, 0); 
   border-radius: 16px;
   backdrop-filter: blur(6px);
   max-width: 700px;
@@ -201,7 +201,7 @@ footer {
 }
 
 .frase-final {
-  color: #ffc0cb; /* rosa claro */
+  color: #ffc0cb; 
   font-weight: bold;
   text-align: center;
   margin-top: 10px;
@@ -209,8 +209,8 @@ footer {
 
 .card-central {
   .card-central {
-  position: relative; /* Añadido para posicionar la flor */
-  overflow: hidden;   /* Para que no se salga */
+  position: relative; 
+  overflow: hidden;   
   z-index: 1;
 
   text-align: center;
@@ -285,7 +285,7 @@ footer {
   top: 55%; 
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 60%; /* antes era 90%, así reducimos su tamaño general */
+  height: 60%; 
   opacity: 0.08;
   pointer-events: none;
   z-index: 0;
@@ -355,7 +355,7 @@ footer {
 .frase-animada {
    text-align: center;
   font-style: italic;
-  font-size: 2rem; /* antes era 1.2rem */
+  font-size: 2rem; 
   color: #ffffff;
   margin-top: 10px;
   opacity: 0.7;
@@ -369,8 +369,8 @@ footer {
 
 .card-tercera {
   text-align: center;
-  background: rgba(255, 255, 255, 0.15);  /* mismo fondo suave translúcido */
-  backdrop-filter: blur(10px);           /* mismo desenfoque de las otras */
+  background: rgba(255, 255, 255, 0.15);  
+  backdrop-filter: blur(10px);          
   color: #fdf6f0;
   font-family: 'Cormorant Garamond', serif;
   padding: 30px;
@@ -390,9 +390,8 @@ footer {
   text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
 }
 
-/* ===================== */
-/* DISEÑO RESPONSIVE     */
-/* ===================== */
+
+/* DISEÑO RESPONSIVE */
 @media screen and (max-width: 768px) {
   /* Logo y menú */
   .logo {
