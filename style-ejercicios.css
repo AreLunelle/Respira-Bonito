@@ -317,3 +317,34 @@ footer {
     padding: 0.8rem 1rem;
   }
 }
+
+@media (max-width: 768px) {
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .bloques-ejercicios {
+    gap: 30px;
+  }
+
+  .card.card-central,
+  .bloque-placeholder {
+    margin-bottom: 25px;
+  }
+
+  .card.card-central button,
+  .bloque-placeholder button {
+    margin: 10px auto;
+    display: block;
+  }
+
+  audio {
+    margin-bottom: 20px;
+  }
+}

@@ -230,3 +230,27 @@ footer {
     right: 15px;
   }
 }
+
+@media (max-width: 768px) {
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .foto-contenedor {
+    margin-top: 20px;
+  }
+
+  .texto-bio {
+    margin-bottom: 20px;
+  }
+
+  .acerca-main {
+    gap: 10px;
+  }
+}
